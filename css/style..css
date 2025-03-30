@@ -5,6 +5,7 @@
 
 body{
     margin: 0;
+    padding: 20px;
     background-color: #D0D0D0;
 }
 
@@ -17,83 +18,57 @@ body{
 }
 
 .items{
-    /* background-color: black; */
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-        "item1 item2 item3"
-        "item4 item5 item6";
-    grid-gap: 20px;
-    align-items: center;
-    justify-items: center;
-    
-    /* border: #000000;
-    border-width: 5px;
-    border-style: solid; */
-    margin: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-#item1{
-    grid-area: item1;
-}
-
-#item2{
-    grid-area: item2;
-}
-
-#item3{
-    grid-area: item3;
-}
-
-#item4{
-    grid-area: item4;
-}
-
-#item5{
-    grid-area: item5;
-}
-
-#item6{
-    grid-area: item6;
-}
 
 .item{
-    height: calc(100vw/3);
-    margin: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-    background-size: contain;
-    border: #29DD3E 2px;
-    border-style: solid;
+    background: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-.item__img{
-    height: 80%;
+.item:hover {
+    transform: translateY(-5px);
 }
 
-img{
-    height: 100%;
-    background-size:cover;
+.item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .item__info{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 10%;
+    padding: 15px;
 }
 
-.item__info>h2{
-    position: relative;
-    left: 20px;
-    margin-right: 0px;
-    color: #FF6060;
-    font-size: 40px;
+.item-title{
+    font-size: 18px;
+    margin: 0 0 10px;
+    color: #333;
 }
+
+.item-price{
+    font-size: 20px;
+    font-weight: bold;
+    color: #FF6060;
+    margin-bottom: 15px;
+}
+
+.item-description{
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+    max-height: 60px;
+    overflow: hidden;
+}
+
 
 .swg{
     background-image: url(images/mdi--ruble.svg);
@@ -107,13 +82,17 @@ img{
 }
 
 
-
-a{
+.add-to-cart{
     text-decoration: none;
-    background-color: #29DD3E;
-    padding: 2% 35%;
+    background: #29DD3E;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
     border-radius: 15.5px;
-    margin-top: 10%;
 }
 
 
